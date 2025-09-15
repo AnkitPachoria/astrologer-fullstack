@@ -1,0 +1,67 @@
+/* custom.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
+
+body {
+  font-family: 'Philosopher', sans-serif;
+}
+/* Navbar menu link hover underline animated bottom border */
+.nav-link {
+  color: inherit;
+  text-decoration: none;
+  padding-bottom: 4px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background: #facc15; /* Tailwind yellow-400 */
+  transition: width 0.3s ease;
+  border-radius: 2px;
+} 
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Optional: add some subtle shadow to top bar text */
+.top-bar span,
+.top-bar svg {
+  text-shadow: 0 0 2px rgba(0,0,0,0.6);
+}
+
+/* In custom.css or tailwind.css */
+.link-underline-animation {
+  position: relative;
+}
+.link-underline-animation::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #facc15; /* yellow-400 */
+  transition: width 0.3s ease-in-out;
+}
+.link-underline-animation:hover::after {
+  width: 100%;
+}
+
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
